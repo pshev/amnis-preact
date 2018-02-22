@@ -1,7 +1,21 @@
 
-<h4 align="center">
+<p align="center" style="margin-top: 25px">
   <strong>Preact bindings for Amnis</strong>
-</h4>
+</p>
+
+## 🔧 Installation
+
+Assuming you use [npm](https://www.npmjs.com/) as your package manager:
+```text
+npm install --save amnis-preact
+```
+If you want to experiment and play around with `amnis-preact` without a module bundler or you don't use one - that's OK. 
+This package includes precompiled production and development UMD builds. 
+You can just drop a UMD build as a `<script>` tag on a page. The UMD builds make `amnisPreact` available as a `window.amnisPreact`.
+```html
+<script type="application/javascript" src="https://unpkg.com/amnis-preact"></script>
+```
+You can see a basic example in [this jsFiddle](https://jsfiddle.net/petershev/4y24re0u/).
 
 ### Usage
 The API has two parts: `Provider` to put [`amnis`](http://npm.im/amnis)' store on the context 
