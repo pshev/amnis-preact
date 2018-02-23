@@ -14,8 +14,16 @@
     "build:umd:dev": "microbundle --external preact,hoist-non-react-statics --format umd --compress false",
     "build:umd:prod": "microbundle --external preact,hoist-non-react-statics --format umd -o dist/index.min.js --compress true"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pshev/amnis-preact.git"
+  },
   "author": "Peter Shev <piotrsevcenco@gmail.com> (http://petershev.com/)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pshev/amnis-preact/issues"
+  },
+  "homepage": "https://github.com/pshev/amnis-preact",
   "peerDependencies": {
     "preact": ">=5",
     "stream-lite": ">=3"
