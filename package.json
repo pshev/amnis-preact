@@ -25,13 +25,12 @@
   },
   "homepage": "https://github.com/pshev/amnis-preact",
   "peerDependencies": {
-    "preact": ">=5",
-    "stream-lite": ">=3"
+    "preact": ">=5"
   },
   "devDependencies": {
     "microbundle": "0.4.4",
     "shallow-equal": "1.0.0",
-    "stream-lite": "3.2.0"
+    "stream-lite": ">=3"
   },
   "dependencies": {
     "hoist-non-react-statics": "2.5.0"
