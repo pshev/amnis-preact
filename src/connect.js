@@ -8,10 +8,13 @@ export const connect = (stateToProps, dispatchToProps) => WrappedComponent => {
   class Connected extends Component {
     constructor(props, context) {
       super(props)
-      if (stateToProps) {
-        this.state = stateToProps(context.store.state$.getValue())
-        this.subscription = null
-      }
+      if (stateToProps)
+        this.subscription = context.store.state$.pipe(
+          distinctUntilChanged(),
+          map(stateToProps),
+          distinctUntilChanged(),
+          subscribe(props => this.subscription ? this.setState(props) : this.state = props)
+        )
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -19,16 +22,6 @@ export const connect = (stateToProps, dispatchToProps) => WrappedComponent => {
         shallowEquals(this.props, nextProps) &&
         shallowEquals(this.state, nextState)
       )
-    }
-
-    componentDidMount() {
-      if (stateToProps)
-        this.subscription = this.context.store.state$.pipe(
-          distinctUntilChanged(),
-          map(stateToProps),
-          distinctUntilChanged(),
-          subscribe(props => this.setState(props)),
-        )
     }
 
     componentWillUnmount() {
