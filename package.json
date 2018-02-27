@@ -31,7 +31,7 @@
   "devDependencies": {
     "microbundle": "0.4.4",
     "shallow-equal": "1.0.0",
-    "stream-lite": "3.1.0"
+    "stream-lite": "3.2.0"
   },
   "dependencies": {
     "hoist-non-react-statics": "2.5.0"
